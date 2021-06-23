@@ -41,7 +41,7 @@ class App extends Component {
   }
 
   getTime = async () => {
-    await fetch("http://worldtimeapi.org/api/ip", {
+    await fetch("https://worldtimeapi.org/api/ip", {
     method: 'GET'
   }).then(res => {
     return res.json()
