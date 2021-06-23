@@ -208,7 +208,7 @@ body {
     align-self: end;
     justify-self: end;
     margin-right: 18%;
-    margin-bottom: 10%;
+    margin-bottom: 0;
   }
 }
 .App .ToggleLess::after, .App .ToggleMore::after {
