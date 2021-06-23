@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+.InfoDayTime, .InfoNightTime {
+  padding: 10% 5%;
+  height: 35vh;
+  margin-top: 23%;
+}
+@media (min-width: 650px) {
+  .InfoDayTime, .InfoNightTime {
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: start;
+    align-items: start;
+  }
+}
+@media (min-width: 1024px) {
+  .InfoDayTime, .InfoNightTime {
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    padding: 2% 5%;
+    grid-template-rows: 1fr;
+  }
+}
+.InfoDayTime .InfoItem, .InfoNightTime .InfoItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 650px) {
+  .InfoDayTime .InfoItem, .InfoNightTime .InfoItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .InfoDayTime .InfoItem h2, .InfoNightTime .InfoItem h2 {
+    margin-top: -20px;
+  }
+}
+@media (min-width: 650px) and (min-width: 1024px) {
+  .InfoDayTime .InfoItem h2, .InfoNightTime .InfoItem h2 {
+    margin-top: -10px;
+  }
+}
+@media (min-width: 1024px) {
+  .InfoDayTime .InfoItem, .InfoNightTime .InfoItem {
+    border-left: 1px solid gray;
+    padding-left: 10%;
+    margin-top: -20vh;
+  }
+  .InfoDayTime .InfoItem:first-child, .InfoDayTime .InfoItem:nth-child(3), .InfoNightTime .InfoItem:first-child, .InfoNightTime .InfoItem:nth-child(3) {
+    border: none;
+    padding-left: 0;
+    margin-left: -20px;
+  }
+  .InfoDayTime .InfoItem:nth-child(2), .InfoDayTime .InfoItem:first-child, .InfoNightTime .InfoItem:nth-child(2), .InfoNightTime .InfoItem:first-child {
+    margin-top: 0;
+  }
+}
+
+.InfoDayTime {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+}
+
+.InfoNightTime {
+  background-color: black;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  background-position: top;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: multiply;
+}
+@media (min-width: 1024px) {
+  .App {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: start;
+    align-items: start;
+  }
+}
+.App .NoDisplayMobile {
+  display: none;
+}
+@media (min-width: 650px) {
+  .App .NoDisplayMobile {
+    display: inline;
+    margin-top: 30px;
+  }
+}
+.App .Time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 5%;
+  margin-top: 15%;
+}
+@media (min-width: 650px) {
+  .App .Time {
+    margin-left: 8%;
+    margin-top: 10%;
+  }
+}
+@media (min-width: 1024px) {
+  .App .Time {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+  }
+}
+.App .Time .GreetingContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 650px) {
+  .App .Time .GreetingContainer {
+    margin-top: -50px;
+  }
+}
+.App .Time .Clock {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: -100px;
+}
+@media (min-width: 650px) {
+  .App .Time .Clock {
+    margin-top: -220px;
+  }
+}
+.App .Time .Clock h4 {
+  margin-top: 40%;
+  font-size: 32px;
+}
+.App .Time h3 {
+  margin-top: -60px;
+}
+@media (min-width: 650px) {
+  .App .Time h3 {
+    margin-top: -120px;
+  }
+}
+.App .Time h4 {
+  margin-bottom: 20%;
+}
+.App .ToggleLess, .App .ToggleMore {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 115px;
+  height: 45px;
+  border: none;
+  border-radius: 20px;
+  background-color: white;
+  font: 700 12px "Inter";
+  letter-spacing: 4px;
+  padding: 0;
+  padding-left: 1%;
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-bottom: 10%;
+  color: #999999;
+}
+@media (min-width: 650px) {
+  .App .ToggleLess, .App .ToggleMore {
+    width: 146px;
+    height: 56px;
+    border-radius: 30px;
+    font-size: 16px;
+    margin-left: 7%;
+    margin-top: 5%;
+  }
+}
+@media (min-width: 1024px) {
+  .App .ToggleLess, .App .ToggleMore {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    align-self: end;
+    justify-self: end;
+    margin-right: 18%;
+    margin-bottom: 10%;
+  }
+}
+.App .ToggleLess::after, .App .ToggleMore::after {
+  position: relative;
+  left: 7%;
+  top: 3%;
+  content: url(../assets/img/icon-arrow-up.svg);
+}
+.App .ToggleLess::after:hover, .App .ToggleMore::after:hover {
+  filter: invert(77%) sepia(0%) saturate(1233%) hue-rotate(266deg) brightness(82%) contrast(76%);
+}
+@media (min-width: 650px) {
+  .App .ToggleLess::after, .App .ToggleMore::after {
+    left: 10%;
+  }
+}
+.App .ToggleMore::after {
+  display: inline-block;
+  transform-origin: 19px 20px;
+  transform: rotate(180deg);
+}
+.App .ProgrammingQuote {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  width: 90%;
+  height: 40vh;
+  margin: 5% auto 0;
+  padding: auto;
+}
+@media (min-width: 650px) {
+  .App .ProgrammingQuote {
+    height: 30vh;
+  }
+}
+@media (min-width: 1024px) {
+  .App .ProgrammingQuote {
+    width: 100%;
+    margin-left: 8%;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+}
+.App .ProgrammingQuote img {
+  margin-top: 10px;
+}
+@media (min-width: 1024px) {
+  .App .ProgrammingQuote img {
+    margin-top: 20px;
+  }
+}
+
+.DayTime {
+  background-image: url(../assets/img/bg-image-daytime-mobile.jpg);
+}
+@media (min-width: 650px) {
+  .DayTime {
+    background-image: url(../assets/img/bg-image-daytime-tablet.jpg);
+  }
+}
+@media (min-width: 1024px) {
+  .DayTime {
+    background-image: url(../assets/img/bg-image-daytime-desktop.jpg);
+  }
+}
+.DayTime .Greeting::before {
+  content: url(../assets/img/icon-sun.svg);
+  position: relative;
+  right: 15px;
+  top: 6px;
+  margin-left: 10px;
+}
+
+.NightTime {
+  background-image: url(../assets/img/bg-image-nighttime-mobile.jpg);
+}
+@media (min-width: 650px) {
+  .NightTime {
+    background-image: url(../assets/img/bg-image-nighttime-tablet.jpg);
+  }
+}
+@media (min-width: 1024px) {
+  .NightTime {
+    background-image: url(../assets/img/bg-image-nighttime-desktop.jpg);
+  }
+}
+.NightTime .Greeting::before {
+  content: url(../assets/img/icon-moon.svg);
+}
+
+h1 {
+  font: 700 100px "Inter";
+  letter-spacing: -5px;
+}
+@media (min-width: 650px) {
+  h1 {
+    font-size: 175px;
+  }
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 200px;
+  }
+}
+
+h2 {
+  font: 700 20px "Inter";
+}
+@media (min-width: 650px) {
+  h2 {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 50px;
+  }
+}
+
+h3 {
+  font: 700 15px "Inter";
+}
+@media (min-width: 650px) {
+  h3 {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1024px) {
+  h3 {
+    font-size: 24px;
+  }
+}
+
+h4 {
+  font: 400 15px "Inter";
+  letter-spacing: 4px;
+}
+@media (min-width: 650px) {
+  h4 {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1024px) {
+  h4 {
+    font-size: 20px;
+  }
+}
+
+h5 {
+  font: 700 12px "Inter";
+}
+@media (min-width: 650px) {
+  h5 {
+    font-size: 18px;
+  }
+}
+
+h6 {
+  font: 700 12px "Inter";
+  letter-spacing: 3px;
+}
+@media (min-width: 650px) {
+  h6 {
+    font-size: 16px;
+  }
+}
+
+p {
+  font: 400 12px "Inter";
+}
+@media (min-width: 650px) {
+  p {
+    font-size: 18px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,252 @@
+@use '../../node_modules/include-media/dist/include-media';
+@use 'variables';
+@use 'info';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.App {
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-position: top;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: hsla(0, 0%, 0%, 0.4);
+    background-blend-mode: multiply;
+    @include include-media.media('>=desktop') {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-items: start;
+        align-items: start;
+    }
+    .NoDisplayMobile {
+        display: none;
+        @include include-media.media('>=tablet') {
+            display: inline;
+            margin-top: 30px;
+        }
+    }
+    .Time {
+        @include variables.flex(column, center, flex-start);
+        margin-left: 5%;
+        margin-top: 15%;
+        @include include-media.media('>=tablet') {
+            margin-left: 8%;
+            margin-top: 10%;
+        }
+        @include include-media.media('>=desktop') {
+            grid-column-start: 1;
+            grid-column-end: 1;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+        .GreetingContainer {
+            @include variables.flex(row, center, center);
+            @include include-media.media('>=tablet') {
+                margin-top: -50px;
+            }
+        }
+        .Clock {
+            @include variables.flex(row, center, center);
+            gap: 10px;
+            margin-top: -100px;
+            @include include-media.media('>=tablet') {
+                margin-top: -220px;
+            }
+            h4 {
+                margin-top: 40%;
+                font-size: 32px;
+            }
+        }
+        h3 {
+              margin-top: -60px;  
+              @include include-media.media('>=tablet') {
+                margin-top: -120px;
+            }
+        }
+        h4 {
+            margin-bottom: 20%;
+        }
+    }
+    .ToggleLess, .ToggleMore {
+        @include variables.flex(row, center, center);
+        width: 115px;
+        height: 45px;
+        border: none;
+        border-radius: 20px;
+        background-color: white;
+        font: 700 12px "Inter";
+        letter-spacing: 4px;
+        padding: 0;
+        padding-left: 1%;
+        margin-top: 10%;
+        margin-left: 5%;
+        margin-bottom: 10%;
+        color: #999999;
+        @include include-media.media('>=tablet') {
+            width: 146px;
+            height: 56px;
+            border-radius: 30px;
+            font-size: 16px;
+            margin-left: 7%;
+            margin-top: 5%;
+        }
+        @include include-media.media('>=desktop') {
+            grid-column-start: 2;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 2;
+            align-self: end;
+            justify-self: end;
+            margin-right: 18%;
+            margin-bottom: 10%;
+        }
+        &::after {
+            position: relative;
+            left: 7%;
+            top: 3%;
+            content: url(../assets/img/icon-arrow-up.svg);
+            &:hover {
+                filter: invert(77%) sepia(0%) saturate(1233%) hue-rotate(266deg) brightness(82%) contrast(76%);
+            }
+            @include include-media.media('>=tablet') {
+                left: 10%;
+            }
+        }
+    }
+    .ToggleMore {
+        &::after {
+            display: inline-block;
+            transform-origin: 19px 20px;
+            transform: rotate(180deg);
+
+        }
+    }
+    .ProgrammingQuote {
+        @include variables.flex(row, space-between, flex-start);
+        gap: 10px;
+        width: 90%;
+        height: 40vh;
+        margin: 5% auto 0;
+        padding: auto;
+        @include include-media.media('>=tablet') {
+            height: 30vh;
+        }
+        @include include-media.media('>=desktop') {
+            width: 100%;
+            margin-left: 8%;
+            grid-column-start: 1;
+            grid-column-end: 1;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+        img {
+            margin-top: 10px;
+            @include include-media.media('>=desktop') {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+.DayTime {
+    background-image: url(../assets/img/bg-image-daytime-mobile.jpg);
+    @include include-media.media('>=tablet') {
+        background-image: url(../assets/img/bg-image-daytime-tablet.jpg);
+    }
+    @include include-media.media('>=desktop') {
+        background-image: url(../assets/img/bg-image-daytime-desktop.jpg);
+    }
+    .Greeting {
+        &::before {
+            content: url(../assets/img/icon-sun.svg);
+            position: relative;
+            right: 15px;
+            top: 6px;
+            margin-left: 10px;
+        }
+    }
+}
+.NightTime {
+    background-image: url(../assets/img/bg-image-nighttime-mobile.jpg);
+    @include include-media.media('>=tablet') {
+        background-image: url(../assets/img/bg-image-nighttime-tablet.jpg);
+    }
+    @include include-media.media('>=desktop') {
+        background-image: url(../assets/img/bg-image-nighttime-desktop.jpg);
+    }
+    .Greeting {
+        &::before {
+            content: url(../assets/img/icon-moon.svg);
+        }
+    }
+}
+
+// FONTS
+
+h1 {
+    font: 700 100px "Inter";
+    letter-spacing: -5px;
+    @include include-media.media('>=tablet') {
+        font-size: 175px;
+    }
+    @include include-media.media('>=desktop') {
+        font-size: 200px;
+    }
+}
+h2 {
+    font: 700 20px "Inter";
+    @include include-media.media('>=tablet') {
+        font-size: 40px;
+    }
+    @include include-media.media('>=desktop') {
+        font-size: 50px;
+    }
+}
+h3 {
+    font: 700 15px "Inter";
+    @include include-media.media('>=tablet') {
+        font-size: 18px;
+    }
+    @include include-media.media('>=desktop') {
+        font-size: 24px;
+    }
+}
+h4 {
+    font: 400 15px "Inter";
+    letter-spacing: 4px;
+    @include include-media.media('>=tablet') {
+        font-size: 18px;
+    }
+    @include include-media.media('>=desktop') {
+        font-size: 20px;
+    }
+}
+h5 {
+    font: 700 12px "Inter";
+    @include include-media.media('>=tablet') {
+        font-size: 18px;
+    }
+}
+
+h6 {
+    font: 700 12px "Inter";
+    letter-spacing: 3px;
+    @include include-media.media('>=tablet') {
+        font-size: 16px;
+    }
+}
+p {
+    font: 400 12px "Inter";
+    @include include-media.media('>=tablet') {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,57 @@
+@use 'variables';
+@use '../../node_modules/include-media/dist/include-media';
+
+.InfoDayTime, .InfoNightTime {
+    padding: 10% 5%;
+    height: 35vh;
+    margin-top: 23%;
+    @include include-media.media('>=tablet') {
+        margin-top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: start;
+        align-items: start;
+    }
+        @include include-media.media('>=desktop') {
+            width: 100%;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 3;
+            grid-row-end: 3;
+            padding: 2% 5%;
+            grid-template-rows: 1fr;
+        }
+    .InfoItem {
+        @include variables.flex(row, space-between, center);
+        @include include-media.media('>=tablet') {
+            @include variables.flex(column, center, flex-start);
+            h2 {
+                margin-top: -20px;
+                @include include-media.media('>=desktop') {
+                    margin-top: -10px;
+                }
+            }
+        }
+        @include include-media.media('>=desktop') {
+            border-left: 1px solid gray;
+            padding-left: 10%;
+            margin-top: -20vh;
+            &:first-child, &:nth-child(3) {
+                border: none;
+                padding-left: 0;
+                margin-left: -20px;
+            }
+            &:nth-child(2), &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+}
+.InfoDayTime {
+    background-color: hsla(0, 0%, 100%, 0.8);
+    color: black;
+}
+.InfoNightTime {
+    background-color: black;
+}
