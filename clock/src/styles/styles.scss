@@ -186,6 +186,10 @@ body {
     .Greeting {
         &::before {
             content: url(../assets/img/icon-moon.svg);
+            position: relative;
+            right: 15px;
+            top: 6px;
+            margin-left: 10px;
         }
     }
 }

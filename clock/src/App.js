@@ -68,7 +68,7 @@ class App extends Component {
         this.setState({timeOfDay: 'MORNING'})
       } else if (this.state.hours >= 12 && this.state.hours <= 17) {
         this.setState({timeOfDay: 'AFTERNOON'})
-      } else if (this.state.hours >= 18 && this.state.hours <= 3) {
+      } else if (this.state.hours >= 18 || this.state.hours <= 3) {
         this.setState({timeOfDay: 'EVENING'})
       }
     })
@@ -94,7 +94,7 @@ class App extends Component {
   }
 
   setBackground = () => {
-    if (this.state.hours < 18) {
+    if (this.state.hours < 18 && this.state.hours >= 4) {
       this.setState({background: 'DayTime'})
     } else {
       this.setState({background: 'NightTime'})
@@ -109,10 +109,10 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    if (this.state.background === 'DayTime' && this.state.hours > 18) {
+    if (this.state.background === 'DayTime' && (this.state.hours > 18 || this.state.hours <= 3)) {
       this.setBackground()
     }
-    else if (this.state.background === 'NightTime' && this.state.hours < 18) {
+    else if (this.state.background === 'NightTime' && this.state.hours < 18 && this.state.hours >= 4) {
       this.setBackground()
     }
   }
