@@ -19,13 +19,18 @@
             grid-column-end: 3;
             grid-row-start: 3;
             grid-row-end: 3;
-            padding: 2% 5%;
+            padding: 3% 5%;
+            padding-bottom: 100px;
             grid-template-rows: 1fr;
         }
     .InfoItem {
         @include variables.flex(row, space-between, center);
         @include include-media.media('>=tablet') {
             @include variables.flex(column, center, flex-start);
+            &:first-child, &:nth-child(3) {
+                margin-left: 20%;
+                margin-right: 100px;
+            }
             h2 {
                 margin-top: -20px;
                 @include include-media.media('>=desktop') {
@@ -36,11 +41,12 @@
         @include include-media.media('>=desktop') {
             border-left: 1px solid gray;
             padding-left: 10%;
-            margin-top: -20vh;
+            margin-top: 0;
             &:first-child, &:nth-child(3) {
                 border: none;
                 padding-left: 0;
                 margin-left: -20px;
+                margin-right: 0;
             }
             &:nth-child(2), &:first-child {
                 margin-top: 0;
